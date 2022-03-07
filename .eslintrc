@@ -1,0 +1,57 @@
+{
+  "root": true,
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "parser": "@typescript-eslint/parser",
+  "ignorePatterns": ["node_modules", "dist"],
+  "parserOptions": {
+    "ecmaVersion": 2015,
+    "sourceType": "module"
+  },
+  "plugins": [
+    "prettier",
+    "@typescript-eslint",
+    "import",
+    "simple-import-sort",
+    "wc",
+    "lit"
+  ],
+  "extends": [
+    "eslint:recommended",
+    "prettier",
+    "plugin:prettier/recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:import/recommended",
+    "plugin:wc/recommended",
+    "plugin:lit/recommended"
+  ],
+  "rules": {
+    "id-length": ["warn", { "min": 2, "exceptions": ["_"] }],
+    "import/first": "error",
+    "import/newline-after-import": "error",
+    "import/no-default-export": "error",
+    "import/no-duplicates": "error",
+    "no-console": "warn",
+    "no-unused-vars": "warn",
+    "simple-import-sort/exports": "error",
+    "simple-import-sort/imports": "error"
+  },
+  "settings": {
+    "import/resolver": {
+      "typescript": {},
+      "node": {
+        "extensions": [".js", ".ts", ".jsx", ".tsx", ".d.ts"]
+      }
+    }
+  },
+  "overrides": [
+    {
+      "files": ["vite.config.ts"],
+      "rules": {
+        "import/no-default-export": "off"
+      }
+    }
+  ]
+}
